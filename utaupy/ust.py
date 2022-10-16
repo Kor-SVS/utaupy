@@ -486,7 +486,7 @@ class Ust:
         """
         self.make_final_note_R()
 
-    def write(self, path: str, mode: str = 'w', encoding: str = 'cp932') -> str:
+    def write(self, path: str, mode: str = 'w', encoding: str = 'utf-8') -> str:
         """
         USTをファイル出力
         """
