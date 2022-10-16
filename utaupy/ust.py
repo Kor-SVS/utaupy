@@ -144,7 +144,7 @@ def notenum_as_abc(notenum) -> str:
     return NOTENUM_TO_NOTENAME_DICT[int(notenum)]
 
 
-def load(path: str, encoding: str = 'cp932'):
+def load(path: str, encoding: str = 'utf-8'):
     """
     USTを読み取り
     """
@@ -195,7 +195,7 @@ class Ust:
         s = '\n'.join(l)
         return s
 
-    def load(self, path: str, encoding='cp932'):
+    def load(self, path: str, encoding='utf-8'):
         """
         ファイルからインスタンス生成
         """
@@ -205,7 +205,7 @@ class Ust:
                 s = f.read().strip()
         except UnicodeDecodeError:
             try:
-                with open(path, mode='r', encoding='utf-8') as f:
+                with open(path, mode='r', encoding='cp932') as f:
                     s = f.read().strip()
             except UnicodeDecodeError:
                 with open(path, mode='r', encoding='utf-8_sig') as f:
